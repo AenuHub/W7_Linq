@@ -12,4 +12,4 @@ In this project create a list of 10 random numbers. Run the following linq queri
 
 - Numbers greater than 15 and less than 22
 
-- The square of each number in the list (For this you can create a new list and print it).
+- The square of each number in the list.
