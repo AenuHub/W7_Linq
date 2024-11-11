@@ -2,7 +2,20 @@
 {
     public static void Main(string[] args)
     {
-        List<int> numbers = new List<int> { -5, 0, 13, -107, 35, 152, 20, -16, 9, 32 };
+        // create a list of 10 random numbers between -50 and 50
+        var numbers = new List<int>();
+        Random random = new Random();
+        for (int i = 0; i < 10; i++)
+        {
+            numbers.Add(random.Next(-50, 50 + 1));
+        }
+
+        Console.WriteLine("Numbers in the list:");
+        foreach (var num in numbers)
+        {
+            Console.Write(num + " ");
+        }
+        Console.WriteLine("\n------------------");
         
         var evenNumbers = numbers.Where(n => n % 2 == 0);
         Console.WriteLine("Even numbers:");
@@ -38,9 +51,16 @@
         
         var selectedNumbers = numbers.Where(n => n > 15 && n < 22);
         Console.WriteLine("Numbers between 15 and 22:");
-        foreach (var num in selectedNumbers)
+        if (selectedNumbers.Count() == 0)
         {
-            Console.Write(num + " ");
+            Console.Write("No numbers found");
+        }
+        else
+        {
+            foreach (var num in selectedNumbers)
+            {
+                Console.Write(num + " ");
+            }
         }
         Console.WriteLine("\n------------------");
         
